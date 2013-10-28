@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
-  </body>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+	</head>
+	<body>
+		<a href="/login"><img src="https://playfoursquare.s3.amazonaws.com/press/logo/connect-blue.png" alt="Connect to foursquare" /></a>
+	</body>
 </html>
