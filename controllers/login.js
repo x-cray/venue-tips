@@ -14,6 +14,7 @@ exports.callback = function(req, res) {
 		}
 		else {
 			req.session.accessToken = accessToken;
+			res.redirect('/');
 		}
 	});
 };

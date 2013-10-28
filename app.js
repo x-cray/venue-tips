@@ -1,4 +1,4 @@
-//require('newrelic');
+require('newrelic');
 
 var express = require('express');
 var index = require('./controllers/index');
