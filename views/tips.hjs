@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tips</title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+	</head>
+	<body>
+		{{#tips}}
+		<div>
+			<p>{{date}}</p>
+			<p>{{user}}</p>
+			<p><img src="{{avatar}}" alt="avatar" /></p>
+			<p>{{text}}</p>
+		</div>
+		{{/tips}}
+		{{^tips}}
+		<p>No tips :(</p>
+		{{/tips}}
+	</body>
+</html>
