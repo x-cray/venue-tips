@@ -1,5 +1,3 @@
-require('newrelic');
-
 var express = require('express');
 var index = require('./controllers/index');
 var login = require('./controllers/login');
@@ -19,12 +17,14 @@ app.use(express.methodOverride());
 app.use(express.cookieParser());
 app.use(express.cookieSession({ secret: 'Hoooray!!!', cookie: { maxAge: 60 * 60 * 1000 }}));
 app.use(app.router);
-app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
-app.use(express.static(path.join(__dirname, 'public')));
 
-// development only
-if ('development' === app.get('env')) {
-  app.use(express.errorHandler());
+var publicDir = path.join(__dirname, 'public');
+app.use(require('less-middleware')({ src: publicDir }));
+app.use(express.static(publicDir));
+
+// Development only.
+if (process.env.NODE_ENV || 'development' === 'development') {
+	app.use(express.errorHandler());
 }
 
 app.get('/', index.index);
